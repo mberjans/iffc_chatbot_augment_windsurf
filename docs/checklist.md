@@ -4,14 +4,14 @@
 
 * **Title:** Create PubMed XML Downloader/Fetcher  
 * **Checklist:**  
-  * \[ \] DATA\_PREP-NXS-0Z-001-RESEARCH\_LIBRARIES: Research Python libraries for HTTP requests (e.g., requests) or specialized PubMed access (e.g., BioPython, pubmedparser2 1).  
-  * \[ \] DATA\_PREP-NXS-0Z-001-DEFINE\_FUNCTION\_SIGNATURE: Define the Python function signature (e.g., download\_pubmed\_xml(pubmed\_id=None, output\_path=".")).  
-  * \[ \] DATA\_PREP-NXS-0Z-001-IMPLEMENT\_DOWNLOAD\_LOGIC: Implement logic to construct the download URL for a given PubMed ID or a default example.  
-  * \[ \] DATA\_PREP-NXS-0Z-001-HANDLE\_REQUEST\_EXECUTION: Implement the HTTP GET request to fetch the XML data.  
-  * \[ \] DATA\_PREP-NXS-0Z-001-ERROR\_HANDLING: Add error handling for network issues or invalid PubMed IDs.  
-  * \[ \] DATA\_PREP-NXS-0Z-001-SAVE\_TO\_FILE: Implement logic to save the downloaded XML content to a specified local file path.  
-  * \[ \] DATA\_PREP-NXS-0Z-001-ADD\_DOCSTRINGS\_COMMENTS: Add docstrings and comments to the script.  
-  * \[ \] DATA\_PREP-NXS-0Z-001-UNIT\_TEST\_DOWNLOAD: Write a unit test to verify successful download and file creation.
+  * \[x\] DATA\_PREP-NXS-0Z-001-RESEARCH\_LIBRARIES: Research Python libraries for HTTP requests (e.g., requests) or specialized PubMed access (e.g., BioPython, pubmedparser2 1).  
+  * \[x\] DATA\_PREP-NXS-0Z-001-DEFINE\_FUNCTION\_SIGNATURE: Define the Python function signature (e.g., download\_pubmed\_xml(pubmed\_id=None, output\_path=".")).  
+  * \[x\] DATA\_PREP-NXS-0Z-001-IMPLEMENT\_DOWNLOAD\_LOGIC: Implement logic to construct the download URL for a given PubMed ID or a default example.  
+  * \[x\] DATA\_PREP-NXS-0Z-001-HANDLE\_REQUEST\_EXECUTION: Implement the HTTP GET request to fetch the XML data.  
+  * \[x\] DATA\_PREP-NXS-0Z-001-ERROR\_HANDLING: Add error handling for network issues or invalid PubMed IDs.  
+  * \[x\] DATA\_PREP-NXS-0Z-001-SAVE\_TO\_FILE: Implement logic to save the downloaded XML content to a specified local file path.  
+  * \[x\] DATA\_PREP-NXS-0Z-001-ADD\_DOCSTRINGS\_COMMENTS: Add docstrings and comments to the script.  
+  * \[x\] DATA\_PREP-NXS-0Z-001-UNIT\_TEST\_DOWNLOAD: Write a unit test to verify successful download and file creation.
 
 **Ticket ID:** NXS-1Z-001
 
