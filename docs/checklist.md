@@ -17,17 +17,17 @@
 
 * **Title:** Develop Core PubMed XML Parser Utility  
 * **Checklist:**  
-  * \[ \] DATA\_PREP-NXS-1Z-001-CHOOSE\_PARSING\_LIBRARY: Decide on XML parsing library (recommend pubmedparser2 1 or lxml).  
-  * \[ \] DATA\_PREP-NXS-1Z-001-DEFINE\_PARSER\_CLASS: Define PubMedXMLParser class structure.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_INITIALIZATION: Implement \_\_init\_\_ method to take XML file path.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-DEFINE\_EXTRACTION\_SCHEMA: If using pubmedparser2, define the YAML or dictionary structure for desired elements (full text, sections, metadata).1  
-  * \[ \] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_METADATA\_EXTRACTION: Implement method to parse and extract key metadata (PMID, title, authors, journal, date, keywords).  
-  * \[ \] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_FULL\_TEXT\_EXTRACTION: Implement method to parse and extract the clean full text.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_SECTION\_EXTRACTION: Implement method to parse and extract distinct sections (abstract, methods, results, etc.), preserving their identity.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-STRUCTURE\_OUTPUT: Define the output format (e.g., a dictionary or custom data objects) for the parsed data.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-ERROR\_HANDLING: Add error handling for malformed XML or missing expected elements.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-ADD\_DOCSTRINGS\_COMMENTS: Add comprehensive docstrings and comments.  
-  * \[ \] DATA\_PREP-NXS-1Z-001-UNIT\_TEST\_PARSING: Write unit tests using the example XML from NXS-0Z-001 to verify correct extraction of all defined fields.
+  * \[x\] DATA\_PREP-NXS-1Z-001-CHOOSE\_PARSING\_LIBRARY: Decide on XML parsing library (recommend pubmedparser2 1 or lxml).  
+  * \[x\] DATA\_PREP-NXS-1Z-001-DEFINE\_PARSER\_CLASS: Define PubMedXMLParser class structure.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_INITIALIZATION: Implement \_\_init\_\_ method to take XML file path.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-DEFINE\_EXTRACTION\_SCHEMA: If using pubmedparser2, define the YAML or dictionary structure for desired elements (full text, sections, metadata).1  
+  * \[x\] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_METADATA\_EXTRACTION: Implement method to parse and extract key metadata (PMID, title, authors, journal, date, keywords).  
+  * \[x\] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_FULL\_TEXT\_EXTRACTION: Implement method to parse and extract the clean full text.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-IMPLEMENT\_SECTION\_EXTRACTION: Implement method to parse and extract distinct sections (abstract, methods, results, etc.), preserving their identity.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-STRUCTURE\_OUTPUT: Define the output format (e.g., a dictionary or custom data objects) for the parsed data.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-ERROR\_HANDLING: Add error handling for malformed XML or missing expected elements.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-ADD\_DOCSTRINGS\_COMMENTS: Add comprehensive docstrings and comments.  
+  * \[x\] DATA\_PREP-NXS-1Z-001-UNIT\_TEST\_PARSING: Write unit tests using the example XML from NXS-0Z-001 to verify correct extraction of all defined fields.
 
 ---
 
