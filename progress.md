@@ -111,3 +111,32 @@ Selected NetworkX as the knowledge graph library for the KAG module implementati
 - Used MultiDiGraph for the knowledge graph implementation to support multiple relationship types between entities
 - Implemented graph creation, node/edge addition, and serialization methods
 - Provided utility functions for graph traversal and querying
+
+#### Task: KAG_DEV-NXS-1A-001-SETUP_NER_TOOL
+
+Completed on: June 11, 2025
+
+Implemented in `ner_extractor.py`:
+
+Set up spaCy with biomedical models for named entity recognition in biomedical texts.
+
+**Core Functions:**
+- `download_biomedical_model()`: Downloads the biomedical NER model for spaCy if not already available, with multiple fallback methods.
+- `setup_spacy_model()`: Sets up and returns the spaCy model for biomedical NER, with fallbacks to simpler models if needed.
+- `map_ner_to_schema()`: Maps NER entity types from spaCy to our custom schema entity types.
+- `extract_entities_with_ner()`: Extracts entities from text using spaCy NER, returning a list with type, text, and position information.
+- `extract_entities_from_sections_with_ner()`: Processes multiple document sections using NER.
+- `extract_entities_from_parsed_xml_with_ner()`: Extracts entities from parsed PubMed XML data structure.
+- `merge_entity_extractions()`: Merges entities from rule-based and NER approaches, handling duplicates.
+
+**Technical Details:**
+- Uses `en_core_sci_md` as the primary biomedical model
+- Implements entity type mapping between spaCy's biomedical entities and our custom schema
+- Handles model download and installation if not available
+- Provides fallback mechanisms to simpler models when necessary
+- Extracts entity metadata including normalized text, position, and type
+
+**Schema Integration:**
+- Maps extracted entities to our defined schema entity types
+- DEFAULT_ENTITY_MAPPING provides the connection between spaCy entity labels and our schema
+- Integration with the knowledge graph schema for consistent entity typing

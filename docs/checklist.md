@@ -40,8 +40,8 @@
 * **Title:** Implement KAG-Builder: XML to Knowledge Graph  
 * **Checklist:**  
   * [x] KAG_DEV-NXS-1A-001-DEFINE_KG_SCHEMA: Define a preliminary schema for the biomedical KG (entities: e.g., medical terms, genes; relationships: e.g., treats, causes).  
-  * \[ \] KAG\_DEV-NXS-1A-001-CHOOSE\_KG\_LIBRARY: Select KG library (e.g., NetworkX).  
-  * \[ \] KAG\_DEV-NXS-1A-001-SETUP\_NER\_TOOL: Set up NER tool (e.g., spaCy with en\_core\_sci\_sm or LLM-based NER).  
+  * [x] KAG_DEV-NXS-1A-001-CHOOSE_KG_LIBRARY: Select KG library (e.g., NetworkX).  
+  * [x] KAG_DEV-NXS-1A-001-SETUP_NER_TOOL: Set up NER tool (e.g., spaCy with en_core_sci_sm or LLM-based NER).  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_ENTITY\_EXTRACTION: Implement function to extract entities from parsed text (from NXS-1Z-001) based on the schema.  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_RELATION\_EXTRACTION: Implement function to extract relationships between identified entities (e.g., co-occurrence, rule-based, or LLM-based).  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_KG\_CONSTRUCTION: Implement function to populate the chosen KG library with extracted entities and relations.  
