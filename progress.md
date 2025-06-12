@@ -92,3 +92,22 @@ Implemented schema validation and query functions:
 - `get_relation_object_types()`: Get valid object types for a relation
 
 The schema is designed to support the Knowledge Augmented Generation (KAG) pattern with mutual indexing between the knowledge graph and source text for accurate citation generation.
+
+#### Task: KAG_DEV-NXS-1A-001-CHOOSE_KG_LIBRARY
+
+Completed on: June 11, 2025
+
+Selected NetworkX as the knowledge graph library for the KAG module implementation.
+
+**Key features that led to choosing NetworkX:**
+- **Graph Types**: Supports multiple graph types including directed graphs and multigraphs (MultiDiGraph), which are essential for representing complex biomedical relationships where multiple edges can exist between the same nodes.
+- **Python Integration**: Seamlessly integrates with other Python libraries and offers a Pythonic API.
+- **Serialization**: Provides built-in methods for graph serialization with `node_link_data()` and deserialization with `node_link_graph()`, facilitating easy saving/loading of knowledge graphs.
+- **Traversal Algorithms**: Rich set of graph algorithms for path finding, centrality measures, and community detection.
+- **Lightweight**: In-memory graph representation that's efficient for the project's requirements.
+- **Extensibility**: Allows custom node and edge attributes which is critical for storing entity types, relations, and mutual indexing references.
+
+**Implementation in `kg_builder.py`:**
+- Used MultiDiGraph for the knowledge graph implementation to support multiple relationship types between entities
+- Implemented graph creation, node/edge addition, and serialization methods
+- Provided utility functions for graph traversal and querying
