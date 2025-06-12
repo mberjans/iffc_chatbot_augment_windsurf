@@ -21,7 +21,7 @@ Features:
 - Handles network errors gracefully
 - Saves XML files with consistent naming convention
 
-## NXS-1Z-001: PubMed XML Parser Utility
+### Ticket ID: NXS-1Z-001: PubMed XML Parser Utility
 
 Completed on: June 11, 2025
 
@@ -41,3 +41,54 @@ Features:
 - Section identification and extraction
 - Text normalization and cleaning
 - Error handling for malformed or missing XML
+
+## Knowledge Augmentation Development (Agent: KAG_DEV)
+
+### Ticket ID: NXS-1A-001 - Implement KAG-Builder: XML to Knowledge Graph
+
+#### Task: KAG_DEV-NXS-1A-001-DEFINE_KG_SCHEMA
+
+Completed on: June 11, 2025
+
+Implemented in `kg_schema.py`:
+
+**Entity Types:**
+Enhanced the biomedical knowledge graph schema with comprehensive entity types including:
+- Basic entities: DRUG, DISEASE, GENE, PROTEIN, PATHWAY
+- Clinical entities: SYMPTOM, ANATOMY, CLINICAL_FEATURE
+- Biological entities: ORGANISM, CELL_TYPE, METABOLITE
+- Process entities: BIOLOGICAL_PROCESS, METHOD
+- Chemical entities: CHEMICAL
+
+Each entity type includes:
+- Description: Detailed explanation of the entity type
+- Examples: Representative samples to guide entity extraction
+
+**Relation Types:**
+Implemented a comprehensive set of relationship types including:
+- Treatment relationships: TREATS
+- Causal relationships: CAUSES, ACTIVATES, INHIBITS
+- Associative relationships: ASSOCIATED_WITH, INTERACTS_WITH, COOCCURS_WITH
+- Structural relationships: PART_OF
+- Biological relationships: EXPRESSED_IN, CONVERTS_TO, BIOMARKER_FOR, REGULATES, METABOLIZED_BY, USED_IN
+
+Each relation type includes:
+- Description: Detailed explanation of the relationship
+- Subject/object type constraints: Lists of valid entity types for each position
+- Examples: Representative triplets to guide relation extraction
+
+**Utility Functions:**
+Implemented schema validation and query functions:
+- `get_all_entity_types()`: Get list of all entity type names
+- `get_all_relation_types()`: Get list of all relation type names
+- `get_entity_description()`: Get description for a specific entity type
+- `get_relation_description()`: Get description for a specific relation type
+- `is_valid_entity_type()`: Check if an entity type is valid in the schema
+- `is_valid_relation()`: Validate if a relation triplet conforms to schema constraints
+- `get_valid_relation_types_between()`: Find valid relationships between two entity types
+- `get_entity_examples()`: Get examples for an entity type
+- `get_relation_example()`: Get an example for a relation type
+- `get_relation_subject_types()`: Get valid subject types for a relation
+- `get_relation_object_types()`: Get valid object types for a relation
+
+The schema is designed to support the Knowledge Augmented Generation (KAG) pattern with mutual indexing between the knowledge graph and source text for accurate citation generation.
