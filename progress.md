@@ -140,3 +140,44 @@ Set up spaCy with biomedical models for named entity recognition in biomedical t
 - Maps extracted entities to our defined schema entity types
 - DEFAULT_ENTITY_MAPPING provides the connection between spaCy entity labels and our schema
 - Integration with the knowledge graph schema for consistent entity typing
+
+#### Task: KAG_DEV-NXS-1A-001-IMPLEMENT_ENTITY_EXTRACTION
+
+Completed on: June 11, 2025
+
+Implemented in `entity_extractor.py`:
+
+Created a comprehensive entity extraction module that combines multiple extraction approaches to identify biomedical entities in PubMed XML data.
+
+**Core Functions:**
+- `load_entity_dictionary()`: Loads entity dictionaries from disk for dictionary-based extraction
+- `normalize_entity_text()`: Normalizes entity text for consistent matching and deduplication
+- `extract_entities_with_dictionary()`: Extracts entities using dictionary-based pattern matching
+- `extract_entities_with_rule_based()`: Orchestrates rule-based entity extraction across multiple entity types
+- `extract_entities_from_parsed_xml()`: Main function that combines NER and rule-based approaches
+- `get_entity_statistics()`: Generates statistics about extracted entities
+- `merge_duplicate_entities()`: Deduplicates extracted entities based on normalized text and type
+
+**Key Features:**
+- Hybrid extraction approach combining NER and dictionary-based methods
+- Non-regex pattern matching as per project requirements
+- Entity normalization for consistent identification
+- Entity validation against the schema
+- Automatic deduplication of entities from different extraction methods
+- Section-aware extraction that preserves source context
+- Support for extracting entities from abstract, full text, or specific sections
+
+**Integration Points:**
+- Uses the NER extractor module for ML-based entity recognition
+- Validates extracted entities against the knowledge graph schema
+- Prepares entities in a format suitable for knowledge graph construction
+- Maintains entity positions within text for mutual indexing support
+
+
+## Ticket 1: Data Ingestion
+
+### Task 1.1: Create a function to download data from a specified URL.
+- **Function:** `download_data(url, save_path)`
+- **Module:** `data_ingestion/downloader.py`
+- **Status:** Completed
+- **Notes:** Downloads data from a URL and saves it locally. Includes basic error handling and directory creation if needed. A test case is provided in the `if __name__ == '__main__':` block, which requires a local HTTP server for testing.

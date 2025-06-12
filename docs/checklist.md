@@ -1,17 +1,23 @@
-**Foundational Setup (Agent: DATA\_PREP)**
+**Foundational Setup (Agent: DATA_PREP)**
+
+**Ticket ID:** DI-UTIL-001
+
+* **Title:** General Data Download Utility
+* **Checklist:**
+  * [x] DI-UTIL-001-CREATE_DOWNLOAD_FUNCTION: Create a generic function `download_data(url, save_path)` to download data from a URL.
 
 **Ticket ID:** NXS-0Z-001
 
 * **Title:** Create PubMed XML Downloader/Fetcher  
 * **Checklist:**  
-  * \[x\] DATA\_PREP-NXS-0Z-001-RESEARCH\_LIBRARIES: Research Python libraries for HTTP requests (e.g., requests) or specialized PubMed access (e.g., BioPython, pubmedparser2 1).  
-  * \[x\] DATA\_PREP-NXS-0Z-001-DEFINE\_FUNCTION\_SIGNATURE: Define the Python function signature (e.g., download\_pubmed\_xml(pubmed\_id=None, output\_path=".")).  
-  * \[x\] DATA\_PREP-NXS-0Z-001-IMPLEMENT\_DOWNLOAD\_LOGIC: Implement logic to construct the download URL for a given PubMed ID or a default example.  
-  * \[x\] DATA\_PREP-NXS-0Z-001-HANDLE\_REQUEST\_EXECUTION: Implement the HTTP GET request to fetch the XML data.  
-  * \[x\] DATA\_PREP-NXS-0Z-001-ERROR\_HANDLING: Add error handling for network issues or invalid PubMed IDs.  
-  * \[x\] DATA\_PREP-NXS-0Z-001-SAVE\_TO\_FILE: Implement logic to save the downloaded XML content to a specified local file path.  
-  * \[x\] DATA\_PREP-NXS-0Z-001-ADD\_DOCSTRINGS\_COMMENTS: Add docstrings and comments to the script.  
-  * \[x\] DATA\_PREP-NXS-0Z-001-UNIT\_TEST\_DOWNLOAD: Write a unit test to verify successful download and file creation.
+  * \[x\] DATA_PREP-NXS-0Z-001-RESEARCH_LIBRARIES: Research Python libraries for HTTP requests (e.g., requests) or specialized PubMed access (e.g., BioPython, pubmedparser2 1).  
+  * \[x\] DATA_PREP-NXS-0Z-001-DEFINE_FUNCTION_SIGNATURE: Define the Python function signature (e.g., download_pubmed_xml(pubmed_id=None, output_path=".")).  
+  * \[x\] DATA_PREP-NXS-0Z-001-IMPLEMENT_DOWNLOAD_LOGIC: Implement logic to construct the download URL for a given PubMed ID or a default example.  
+  * \[x\] DATA_PREP-NXS-0Z-001-HANDLE_REQUEST_EXECUTION: Implement the HTTP GET request to fetch the XML data.  
+  * \[x\] DATA_PREP-NXS-0Z-001-ERROR_HANDLING: Add error handling for network issues or invalid PubMed IDs.  
+  * \[x\] DATA_PREP-NXS-0Z-001-SAVE_TO_FILE: Implement logic to save the downloaded XML content to a specified local file path.  
+  * \[x\] DATA_PREP-NXS-0Z-001-ADD_DOCSTRINGS_COMMENTS: Add docstrings and comments to the script.  
+  * \[x\] DATA_PREP-NXS-0Z-001-UNIT_TEST_DOWNLOAD: Write a unit test to verify successful download and file creation.
 
 **Ticket ID:** NXS-1Z-001
 
@@ -42,7 +48,7 @@
   * [x] KAG_DEV-NXS-1A-001-DEFINE_KG_SCHEMA: Define a preliminary schema for the biomedical KG (entities: e.g., medical terms, genes; relationships: e.g., treats, causes).  
   * [x] KAG_DEV-NXS-1A-001-CHOOSE_KG_LIBRARY: Select KG library (e.g., NetworkX).  
   * [x] KAG_DEV-NXS-1A-001-SETUP_NER_TOOL: Set up NER tool (e.g., spaCy with en_core_sci_sm or LLM-based NER).  
-  * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_ENTITY\_EXTRACTION: Implement function to extract entities from parsed text (from NXS-1Z-001) based on the schema.  
+  * [x] KAG_DEV-NXS-1A-001-IMPLEMENT_ENTITY_EXTRACTION: Implement function to extract entities from parsed text (from NXS-1Z-001) based on the schema.  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_RELATION\_EXTRACTION: Implement function to extract relationships between identified entities (e.g., co-occurrence, rule-based, or LLM-based).  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_KG\_CONSTRUCTION: Implement function to populate the chosen KG library with extracted entities and relations.  
   * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_MUTUAL\_INDEXING: Design and implement data structure to link KG nodes/edges back to specific text chunks/sections from the source XML (critical for citations).2  
