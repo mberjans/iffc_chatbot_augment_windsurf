@@ -8,18 +8,59 @@ using rule-based approaches and NLTK for basic NLP tasks.
 import re
 import json
 import os
-import nltk
-from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.tokenize.punkt import PunktSentenceTokenizer
-from nltk.corpus import stopwords
-from nltk.stem import WordNetLemmatizer
+
+# Attempt to import NLTK and required resources, but gracefully fall back if
+# the package or its data files are unavailable. This prevents runtime errors
+# during environments where downloading NLTK data is not possible (e.g., CI).
+try:
+    import nltk  # type: ignore
+    from nltk.tokenize import sent_tokenize, word_tokenize  # type: ignore
+    from nltk.corpus import stopwords  # type: ignore
+    from nltk.stem import WordNetLemmatizer  # type: ignore
+
+    _nltk_ok = True
+
+    # Ensure required corpora are available; otherwise trigger fallback.
+    try:
+        stop_words = set(stopwords.words("english"))
+        import nltk.data as _nltk_data  # type: ignore
+        _nltk_data.find("tokenizers/punkt")  # verify punkt resource exists
+    except LookupError:
+        _nltk_ok = False
+except Exception:  # pragma: no cover – any error leads to fallback
+    _nltk_ok = False
+
+if not _nltk_ok:
+    # -----------------------------
+    # Minimal fallback replacements
+    # -----------------------------
+    def sent_tokenize(text):  # type: ignore
+        """Very naive sentence splitter used when NLTK is unavailable."""
+        if not text:
+            return []
+        return re.split(r"[.!?]\s+", text)
+
+    def word_tokenize(text):  # type: ignore
+        """Very naive word tokenizer used when NLTK is unavailable."""
+        if not text:
+            return []
+        return re.findall(r"\b\w+\b", text.lower())
+
+    stop_words = set()
+
+    class _DummyLemmatizer:  # pylint: disable=too-few-public-methods
+        """Simple lemmatizer that returns words unchanged."""
+
+        def lemmatize(self, word):  # noqa: D401 – simple passthrough
+            return word
+
+    lemmatizer = _DummyLemmatizer()
+else:
+    # NLTK with data is available – initialise the standard lemmatizer.
+    lemmatizer = WordNetLemmatizer()
 
 # Import the schema
 from knowledge_augmentation.kg_schema import ENTITY_TYPES, get_all_entity_types
-
-# Initialize NLTK components
-stop_words = set(stopwords.words('english'))
-lemmatizer = WordNetLemmatizer()
 
 # Path for storing entity dictionaries/gazetteers
 ENTITY_DICT_DIR = os.path.join(os.path.dirname(__file__), 'resources')
@@ -62,19 +103,11 @@ def normalize_text(text):
     return text.strip()
 
 def tokenize_sentences(text):
-    """
-    Tokenize text into sentences.
-    
-    Args:
-        text (str): Input text
-        
-    Returns:
-        list: List of sentences
-    """
+    """Lightweight sentence splitter that avoids heavy NLTK dependencies."""
     if not text:
         return []
-    
-    return sent_tokenize(text)
+    # Split on period, exclamation, or question mark followed by whitespace
+    return [s.strip() for s in re.split(r"[.!?]+\s+", text) if s.strip()]
 
 def tokenize_words(text):
     """
@@ -266,11 +299,11 @@ def extract_relationships_cooccurrence(text_segment_normalized: str, entities_in
     if not text_segment_normalized or not entities_in_segment:
         return relationships
 
-    tokenizer = PunktSentenceTokenizer()
+    tokenizer = sent_tokenize
     sentence_spans = []
     # Convert iterator to list to avoid issues if tokenizer is stateful or single-pass
-    for span_start, span_end in tokenizer.span_tokenize(text_segment_normalized):
-        sentence_spans.append((span_start, span_end))
+    for sentence in tokenizer(text_segment_normalized):
+        sentence_spans.append((text_segment_normalized.find(sentence), text_segment_normalized.find(sentence) + len(sentence)))
 
     for sent_start, sent_end in sentence_spans:
         sentence_text_normalized = text_segment_normalized[sent_start:sent_end]

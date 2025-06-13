@@ -1,0 +1,63 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {
+    "created": "2025-06-13T02:12:26.264730",
+    "version": "1.0",
+    "description": "Biomedical Knowledge Graph from PubMed XML"
+  },
+  "nodes": [
+    {
+      "type": "ORGANISM",
+      "text": "SARS-CoV-2",
+      "normalized_text": "sars-cov-2",
+      "sources": [
+        {
+          "pubmed_id": "32133153",
+          "section": "abstract",
+          "timestamp": "2025-06-13T02:12:26.269592",
+          "start_pos": 100,
+          "end_pos": 110
+        }
+      ],
+      "id": "ORGANISM:sars-cov-2"
+    },
+    {
+      "type": "PROTEIN",
+      "text": "ACE2",
+      "normalized_text": "ace2",
+      "sources": [
+        {
+          "pubmed_id": "32133153",
+          "section": "abstract",
+          "timestamp": "2025-06-13T02:12:26.269610",
+          "start_pos": 120,
+          "end_pos": 124
+        }
+      ],
+      "id": "PROTEIN:ace2"
+    }
+  ],
+  "links": [
+    {
+      "type": "COOCCURS_WITH",
+      "evidence": "Article title: Comparative genetic analysis of the novel coronavirus (2019-nCoV/SARS-CoV-2) receptor ACE2 in different populations.]",
+      "confidence": 0.5,
+      "sources": [
+        {
+          "pubmed_id": "32133153",
+          "section": "abstract",
+          "timestamp": "2025-06-13T02:12:26.269618"
+        }
+      ],
+      "source": "ORGANISM:sars-cov-2",
+      "target": "PROTEIN:ace2",
+      "key": 0
+    }
+  ],
+  "metadata": {
+    "saved_at": "2025-06-13T02:12:26.269710",
+    "node_count": 2,
+    "edge_count": 1
+  }
+}

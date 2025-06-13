@@ -50,10 +50,10 @@
   * [x] KAG_DEV-NXS-1A-001-SETUP_NER_TOOL: Set up NER tool (e.g., spaCy with en_core_sci_sm or LLM-based NER).  
   * [x] KAG_DEV-NXS-1A-001-IMPLEMENT_ENTITY_EXTRACTION: Implement function to extract entities from parsed text (from NXS-1Z-001) based on the schema.  
   * [x] KAG_DEV-NXS-1A-001-IMPLEMENT_RELATION_EXTRACTION: Implement function to extract relationships between identified entities (e.g., co-occurrence, rule-based, or LLM-based).  
-  * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_KG\_CONSTRUCTION: Implement function to populate the chosen KG library with extracted entities and relations.  
-  * \[ \] KAG\_DEV-NXS-1A-001-IMPLEMENT\_MUTUAL\_INDEXING: Design and implement data structure to link KG nodes/edges back to specific text chunks/sections from the source XML (critical for citations).2  
-  * \[ \] KAG\_DEV-NXS-1A-001-SERIALIZE\_KG\_INDEX: Implement logic to save/load the KG and mutual index if on-disk persistence is chosen.  
-  * \[ \] KAG\_DEV-NXS-1A-001-UNIT\_TEST\_KG\_BUILDER: Write unit tests for entity extraction, relation extraction, and KG construction using parsed XML.
+  * [x] KAG_DEV-NXS-1A-001-IMPLEMENT_KG_CONSTRUCTION: Implement function to populate the chosen KG library with extracted entities and relations.  
+  * [x] KAG_DEV-NXS-1A-001-IMPLEMENT_MUTUAL_INDEXING: Design and implement data structure to link KG nodes/edges back to specific text chunks/sections from the source XML (critical for citations).2  
+  * [x] KAG_DEV-NXS-1A-001-SERIALIZE_KG_INDEX: Implement logic to save/load the KG and mutual index if on-disk persistence is chosen.  
+  * [x] KAG_DEV-NXS-1A-001-UNIT_TEST_KG_BUILDER: Write unit tests for entity extraction, relation extraction, and KG construction using parsed XML.
 
 **Ticket ID:** NXS-1A-002
 
